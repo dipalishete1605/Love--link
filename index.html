@@ -1,71 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>One Question 💖</title>
-
-<style>
-body{
-  text-align:center;
-  font-family:Arial, sans-serif;
-  background:#fff0f5;
-  height:100vh;
-  overflow:hidden;
-}
-h1{ color:#d6336c; }
-
-button{
-  padding:12px 24px;
-  font-size:18px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-#yes{
-  background:#ff4d6d;
-  color:white;
-}
-
-#no{
-  background:#adb5bd;
-  position:absolute;
-}
-
-#love{
-  display:none;
-  margin-top:40px;
-  font-size:24px;
-  color:#d6336c;
-}
-</style>
+  <title>Just One Question 💖</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 100px;
+      font-family: Arial, sans-serif;
+      background-color: #ffe6f0;
+    }
+    h1 {
+      color: #d63384;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+    }
+    #yes {
+      background-color: #28a745;
+      color: white;
+    }
+    #no {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+  </style>
 </head>
 
 <body>
+  <h1>Will you marry me? 💍❤️</h1>
 
-<h1>Do you love me? 💕</h1>
+  <button id="yes" onclick="yesClick()">Yes</button>
+  <button id="no" onmouseover="moveNo()">No</button>
 
-<button id="yes" onclick="showLove()">Yes</button>
-<button id="no" onmouseover="moveNo()">No</button>
+  <script>
+    function moveNo() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      document.getElementById("no").style.left = x + "px";
+      document.getElementById("no").style.top = y + "px";
+    }
 
-<div id="love">
-  <p>I LOVE YOU TOO ❤️</p>
-  <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" width="280">
-</div>
-
-<script>
-function moveNo(){
-  const x = Math.random()*(window.innerWidth-120);
-  const y = Math.random()*(window.innerHeight-120);
-  const noBtn = document.getElementById("no");
-  noBtn.style.left = x+"px";
-  noBtn.style.top = y+"px";
-}
-
-function showLove(){
-  document.getElementById("love").style.display="block";
-}
-</script>
-
+    function yesClick() {
+      document.body.innerHTML = `
+        <h1>I love you ❤️</h1>
+        <p>You just made me the happiest person 🥹💍</p>
+        <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" width="300">
+      `;
+    }
+  </script>
 </body>
 </html>
